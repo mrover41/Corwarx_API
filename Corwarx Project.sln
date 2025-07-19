@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corwarx_Core", "Corwarx Project\Corwarx_Core.csproj", "{9BF8E538-C069-456F-A721-E77B808E45F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corwarx_Roles", "Corwarx_Roles\Corwarx_Roles.csproj", "{F9A1E18D-45C4-423A-817F-73F343D453C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corwarx_Gameplay", "Corwarx_Gameplay\Corwarx_Gameplay.csproj", "{F27B1A74-A2F3-4360-BB01-E6AB197ADBAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corwarx_Items", "Corwarx_Items\Corwarx_Items.csproj", "{B329F15B-6F7B-43BC-8864-9678DC59686C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Corwarx_Administration", "Corwarx_Administration\Corwarx_Administration.csproj", "{DE844006-1753-4AAD-BFF0-945557F0D8D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corwarx_UI", "Corwarx_UI\Corwarx_UI.csproj", "{FDE351B7-8C9D-4810-9340-9D961C2F3618}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BF8E538-C069-456F-A721-E77B808E45F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF8E538-C069-456F-A721-E77B808E45F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF8E538-C069-456F-A721-E77B808E45F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF8E538-C069-456F-A721-E77B808E45F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9A1E18D-45C4-423A-817F-73F343D453C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A1E18D-45C4-423A-817F-73F343D453C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A1E18D-45C4-423A-817F-73F343D453C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A1E18D-45C4-423A-817F-73F343D453C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27B1A74-A2F3-4360-BB01-E6AB197ADBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27B1A74-A2F3-4360-BB01-E6AB197ADBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27B1A74-A2F3-4360-BB01-E6AB197ADBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27B1A74-A2F3-4360-BB01-E6AB197ADBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B329F15B-6F7B-43BC-8864-9678DC59686C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B329F15B-6F7B-43BC-8864-9678DC59686C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B329F15B-6F7B-43BC-8864-9678DC59686C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B329F15B-6F7B-43BC-8864-9678DC59686C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE844006-1753-4AAD-BFF0-945557F0D8D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE844006-1753-4AAD-BFF0-945557F0D8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE844006-1753-4AAD-BFF0-945557F0D8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE844006-1753-4AAD-BFF0-945557F0D8D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDE351B7-8C9D-4810-9340-9D961C2F3618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE351B7-8C9D-4810-9340-9D961C2F3618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE351B7-8C9D-4810-9340-9D961C2F3618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE351B7-8C9D-4810-9340-9D961C2F3618}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A9A7A47-B6D6-46EB-9617-284E836D87DE}
+	EndGlobalSection
+EndGlobal
