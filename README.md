@@ -11,9 +11,7 @@ If yor a plugin devolper, u can read this [code](https://github.dev/CorwarxProje
   - new custum roles and items.
 - Modular and extensible design for adding new functionalities.
 
-# 📁 Installation and Configuration
-- [Installation Guide](https://github.com/northwood-studios/LabAPI/wiki/Installing-Plugins)  
-- [Configuration Guide](https://github.com/northwood-studios/LabAPI/wiki/Configuring-Plugins)
+# Installation
 
 1. Ensure you have the EXILED framework installed on your SCP: Secret Laboratory server.
    - Follow the installation guide at [EXILED Documentation](https://github.com/Exiled-Team/EXILED/wiki/Installation).
