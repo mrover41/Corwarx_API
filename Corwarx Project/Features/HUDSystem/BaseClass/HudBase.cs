@@ -1,9 +1,5 @@
-﻿using Corwarx_Project.Features.HUDSystem.Structures;
+﻿/*using Corwarx_Project.Features.HUDSystem.Structures;
 using Exiled.API.Features;
-using RueI.Displays;
-using RueI.Displays.Scheduling;
-using RueI.Elements;
-using RueI.Extensions;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
@@ -48,7 +44,7 @@ namespace Corwarx_Project.Features.HUDSystem.BaseClass {
                     foreach (string h in Hint.Hint) {
                         TimedElemRef<SetElement> timedElemRef = new TimedElemRef<SetElement>();
                         timedElemRefs[player].Add(timedElemRef);
-                        displayCore.SetElementOrNew(timedElemRef, Hint.AutoStile ? $"<align={Hint.Align.ToString()}><size={Hint.Size}><b><color={player.Role.Color.ToHex()}> {h} </b></size></color></align>" : h, currentOffset);
+                        displayCore.SetElementOrNew(timedElemRef, Hint.AutoStile ? $"<align={Hint.Align}><size={Hint.Size}><b><color={player.Role.Color.ToHex()}> {h} </b></size></color></align>" : h, currentOffset);
                         currentOffset -= offset;
                     }
                     displayCore.Update();
@@ -79,3 +75,4 @@ namespace Corwarx_Project.Features.HUDSystem.BaseClass {
         public abstract List<Player> GetPlayer();
     }
 }
+*/

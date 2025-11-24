@@ -1,8 +1,10 @@
-﻿using Corwarx_Project.Events.Args.Administration;
+﻿using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
+using Corwarx_Project.Events.Args.Administration;
 using Corwarx_Project.Features.ModuleSystem.BaseClass;
 using Exiled.API.Features;
 
 namespace Corwarx_Administration.Modules {
+    [LoadModule]
     internal class WarnMessage : ModuleBase {
         public override string Name => "Warn message";
 

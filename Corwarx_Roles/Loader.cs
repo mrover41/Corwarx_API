@@ -1,10 +1,9 @@
-﻿using Exiled.API.Features;
+﻿using Corwarx_Project.Events.Handles;
+using Corwarx_Project.Features.ModuleSystem.Manager;
 using Corwarx_Project.Features.RoleSystem.Manager;
 using Corwarx_Project.Roles;
-using Corwarx_Project.Features.ModuleSystem.Manager;
-using Corwarx_Project.Modules;
-using Exiled.Events;
-using Corwarx_Project.Events.Handles;
+using Exiled.API.Features;
+using System.Reflection;
 
 namespace Corwarx_Roles {
     public class Loader : Plugin<Config> {
@@ -13,7 +12,8 @@ namespace Corwarx_Roles {
 
             RoleManager.RegisterRole(new SCP_966());
             RoleManager.RegisterRole(new SCP_939_2());
-            ModuleManager.RegisterModule(new SpawnRoles());
+
+            ModuleManager.RegisterModules(Assembly.GetExecutingAssembly());
 
             Log.Info("Corwarx_Roles plugin has been enabled and test role registered.");
             base.OnEnabled();

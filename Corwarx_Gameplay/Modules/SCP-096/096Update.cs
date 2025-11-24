@@ -1,9 +1,11 @@
-﻿using Corwarx_Project.Features.ModuleSystem.BaseClass;
+﻿using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
+using Corwarx_Project.Features.ModuleSystem.BaseClass;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Scp096;
 using PlayerRoles;
 
 namespace Corwarx_Gameplay.Modules.SCP_096 {
+    [LoadModule]
     internal class SCP_096Update : ModuleBase {
         public override string Name => "SCP096Update";
 

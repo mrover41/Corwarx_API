@@ -1,15 +1,7 @@
-﻿/*using Exiled.API.Enums;
-using Exiled.API.Features;
-using Exiled.API.Features.Pickups;
+﻿using Exiled.API.Features;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomItems.API.Features;
 using Exiled.Events.EventArgs.Player;
-using InventorySystem.Items.Pickups;
-using RueI.Displays;
-using RueI.Displays.Scheduling;
-using RueI.Elements;
-using RueI.Extensions;
-using System;
 using UnityEngine;
 
 
@@ -42,7 +34,7 @@ public class Component_Tester : CustomWeapon {
         } if (Physics.Linecast(ev.Player.CameraTransform.position, ev.RaycastHit.point, out RaycastHit raycastHit)) {
             Component[] componentsP = raycastHit.transform.GetComponentsInParent<Component>();
             Component[] componentsC = raycastHit.transform.GetComponentsInChildren<Component>();
-            DisplayCore displayCore = DisplayCore.Get(ev.Player.ReferenceHub);
+            //DisplayCore displayCore = DisplayCore.Get(ev.Player.ReferenceHub);
             string cp = "<align=left><size=15>ComponentInParent\n", cc = "<align=right><size=15>ComponentsInChildren\n";
 
             foreach (Component component in componentsP) {
@@ -53,14 +45,18 @@ public class Component_Tester : CustomWeapon {
                 cc += $"{component.GetType().Name}\n";
             }
 
-            var elementReference_1 = new TimedElemRef<SetElement>();
-            displayCore.SetElemTemp(cp, 900, TimeSpan.FromSeconds(5), elementReference_1);
+            Log.Info(cp);
+            Log.Info("===============================");
+            Log.Info(cc);
 
-            var elementReference_2 = new TimedElemRef<SetElement>();
-            displayCore.SetElemTemp(cc, 900, TimeSpan.FromSeconds(5), elementReference_2);
+            //var elementReference_1 = new TimedElemRef<SetElement>();
+            //displayCore.SetElemTemp(cp, 900, TimeSpan.FromSeconds(5), elementReference_1);
+
+            //var elementReference_2 = new TimedElemRef<SetElement>();
+            //displayCore.SetElemTemp(cc, 900, TimeSpan.FromSeconds(5), elementReference_2);
         }
     }
 
 
     public override SpawnProperties SpawnProperties { get; set; } = null;
-} */
+}

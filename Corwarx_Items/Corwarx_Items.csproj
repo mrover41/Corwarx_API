@@ -108,6 +108,9 @@
     <Reference Include="Pooling">
       <HintPath>..\..\..\..\Desktop\Temp\Pooling.dll</HintPath>
     </Reference>
+    <Reference Include="RueI">
+      <HintPath>..\..\..\..\Desktop\Temp\RueI.dll</HintPath>
+    </Reference>
     <Reference Include="SemanticVersioning">
       <HintPath>..\..\..\..\Desktop\Temp\SemanticVersioning.dll</HintPath>
     </Reference>

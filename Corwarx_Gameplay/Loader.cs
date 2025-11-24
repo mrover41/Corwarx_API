@@ -1,8 +1,4 @@
-﻿using Corwarx_Gameplay.Modules.Integrations;
-using Corwarx_Gameplay.Modules.Lobby;
-using Corwarx_Gameplay.Modules.Player;
-using Corwarx_Gameplay.Modules.SCP_096;
-using Corwarx_Project.Features.ModuleSystem.Manager;
+﻿using Corwarx_Project.Features.ModuleSystem.Manager;
 using Exiled.API.Features;
 using HarmonyLib;
 using Plugin = Corwarx_Project.Events.Handles.Plugin;
@@ -15,11 +11,9 @@ namespace Corwarx_Gameplay {
         public override void OnEnabled() {
             Plugin.OnLoadPlugin(new Corwarx_Project.Events.Args.Plugin.LoadPluginEventArgs("Corwarx_Gameplay"));
             _harmony.PatchAll();
-            ModuleManager.RegisterModule(new Bleeding());
-            ModuleManager.RegisterModule(new SCP_096Update());
-            ModuleManager.RegisterModule(new LobbyModule());
-            ModuleManager.RegisterModule(new ItemIntegration());
-            ModuleManager.RegisterModule(new DoorInteraction());
+
+            ModuleManager.RegisterModules(System.Reflection.Assembly.GetExecutingAssembly());
+
             base.OnEnabled();
         }
 

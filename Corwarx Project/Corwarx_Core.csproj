@@ -7,7 +7,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="ExMod.Exiled" Version="9.6.1" />
+	  <PackageReference Include="ExMod.Exiled" Version="9.10.1" />
+	  <PackageReference Include="RueI" Version="3.1.2" />
 	  <PackageReference Include="Unity" Version="5.11.10" />
 	</ItemGroup>
 
@@ -110,9 +111,6 @@
     </Reference>
     <Reference Include="Pooling">
       <HintPath>..\..\..\..\Desktop\Temp\Pooling.dll</HintPath>
-    </Reference>
-    <Reference Include="RueI">
-      <HintPath>..\..\..\..\Desktop\Temp\RueI.dll</HintPath>
     </Reference>
     <Reference Include="SemanticVersioning">
       <HintPath>..\..\..\..\Desktop\Temp\SemanticVersioning.dll</HintPath>

@@ -1,4 +1,5 @@
-﻿using Corwarx_Project.Features.ModuleSystem.BaseClass;
+﻿using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
+using Corwarx_Project.Features.ModuleSystem.BaseClass;
 using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
@@ -7,6 +8,7 @@ using System.Linq;
 using UnityEngine;
 
 namespace Corwarx_Gameplay.Modules.Lobby {
+    [LoadModule]
     internal class LobbyModule : ModuleBase {
         public override string Name => "Lobby";
 

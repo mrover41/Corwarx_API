@@ -1,4 +1,5 @@
-﻿using Corwarx_Project.Features.ModuleSystem.BaseClass;
+﻿using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
+using Corwarx_Project.Features.ModuleSystem.BaseClass;
 using Exiled.API.Features.Doors;
 using Exiled.Events.EventArgs.Player;
 using Interactables.Interobjects.DoorButtons;
@@ -6,6 +7,7 @@ using Interactables.Interobjects.DoorUtils;
 using UnityEngine;
 
 namespace Corwarx_Gameplay.Modules.Integrations {
+    [LoadModule]
     internal class DoorInteraction : ModuleBase {
         public override string Name => "Door Interaction";
 
@@ -17,7 +19,7 @@ namespace Corwarx_Gameplay.Modules.Integrations {
         }
 
         public override void OnDisable() {
-            Exiled.Events.Handlers.Player.Shot += Shoot;
+            Exiled.Events.Handlers.Player.Shot -= Shoot;
             base.OnDisable();
         }
 

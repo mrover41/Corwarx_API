@@ -7,6 +7,8 @@ using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
 using PlayerRoles.PlayableScps.Scp079;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Corwarx_UI.Modules {

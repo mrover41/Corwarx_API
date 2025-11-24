@@ -1,4 +1,5 @@
-﻿using Corwarx_Project.Features.Components.PlayerComponents;
+﻿using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
+using Corwarx_Project.Features.Components.PlayerComponents;
 using Corwarx_Project.Features.Components.SCP049Components;
 using Corwarx_Project.Features.ModuleSystem.BaseClass;
 using Exiled.API.Features;
@@ -7,6 +8,7 @@ using PlayerRoles;
 using UnityEngine;
 
 namespace Corwarx_Project.Modules {
+    [LoadModule]
     internal class MonoLoad : ModuleBase {
         public override string Name => "Mono Loader";
 

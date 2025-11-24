@@ -1,9 +1,11 @@
-﻿using Corwarx_Project.Features.ModuleSystem.BaseClass;
+﻿using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
+using Corwarx_Project.Features.ModuleSystem.BaseClass;
 using Corwarx_Project.Features.RoleSystem.Manager;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
 
 namespace Corwarx_Project.Modules {
+    [LoadModule]
     internal class SpawnRoles : ModuleBase {
         public override string Name => "Role spawner";
 

@@ -1,8 +1,10 @@
 ﻿using Corwarx_Project.Features.ModuleSystem.Manager;
+using Corwarx_Project.Features.RoleSystem.BaseClass;
 using Corwarx_Project.Features.RoleSystem.Manager;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
 using HarmonyLib;
+using System.Reflection;
 using Plugin = Corwarx_Project.Events.Handles.Plugin;
 
 namespace Corwarx_Project.Core {
@@ -19,10 +21,11 @@ namespace Corwarx_Project.Core {
             Plugin.OnLoadPlugin(new Events.Args.Plugin.LoadPluginEventArgs(PluginName));
             _harmony = new Harmony("com.corwarx.core");
             _harmony.PatchAll();
-            ModuleManager.RegisterModule(new Modules.MonoLoad());
-            ModuleManager.RegisterModule(new Modules.AddHUD());
 
-            RueI.RueIMain.EnsureInit();
+            ModuleManager.RegisterModules(Assembly.GetExecutingAssembly());
+            ModuleManager.EnableAllModules();
+
+            //RueI.RueIMain.EnsureInit();
 
             Log.Warn("\n Plugin CORWAX CORE is running! \n Creator: Mr_Over41 \n Made for: Corwax \n oo-ee-oo");
             Log.Info($"Plugin {PluginName} started");
@@ -40,7 +43,7 @@ namespace Corwarx_Project.Core {
         }
 
         private void OnDisconnect(LeftEventArgs ev) { 
-            if (!ev.Player.TryGetRoleBase(out Features.RoleSystem.BaseClass.RoleBase roleBase) || roleBase == null) return;
+            if (!ev.Player.TryGetRoleBase(out RoleBase roleBase) || roleBase == null) return;
             RoleManager.RemoveRole(ev.Player, roleBase.Id);
         }
 

@@ -1,4 +1,5 @@
-﻿using Corwarx_Project.Features.ModuleSystem.BaseClass;
+﻿using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
+using Corwarx_Project.Features.ModuleSystem.BaseClass;
 using Exiled.API.Features;
 using Exiled.API.Features.Pickups;
 using Exiled.Events.EventArgs.Player;
@@ -6,6 +7,7 @@ using InventorySystem.Items.Pickups;
 using UnityEngine;
 
 namespace Corwarx_Gameplay.Modules.Integrations {
+    [LoadModule]
     internal class ItemIntegration : ModuleBase {
         public override string Name => "Item Integration";
 

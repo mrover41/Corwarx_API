@@ -1,9 +1,11 @@
 ﻿using Corwarx_Project.Core;
+using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
 using Corwarx_Project.Events.Args.Modules;
 using Corwarx_Project.Features.ModuleSystem.BaseClass;
 using Exiled.API.Features;
 
 namespace Corwarx_Project.Modules {
+    [LoadModule]
     internal class ModuleBlocker : ModuleBase {
         public override string Name => "Module Blocker";
 

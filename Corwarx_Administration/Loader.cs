@@ -1,8 +1,6 @@
-﻿using Corwarx_Project.Core;
-using Corwarx_Project.Events.Handles;
+﻿using Corwarx_Project.Events.Handles;
 using Corwarx_Project.Features.ModuleSystem.Manager;
 using Exiled.API.Features;
-using Exiled.Events;
 
 namespace Corwarx_Administration {
     public class Loader : Plugin<Config> {
@@ -12,8 +10,8 @@ namespace Corwarx_Administration {
         public override void OnEnabled() {
             Plugin.OnLoadPlugin(new Corwarx_Project.Events.Args.Plugin.LoadPluginEventArgs("Corwarx_Admin"));
 
-            ModuleManager.RegisterModule(new Modules.WarnSystem());
-            ModuleManager.RegisterModule(new Modules.WarnMessage());
+            ModuleManager.RegisterModules(System.Reflection.Assembly.GetExecutingAssembly());
+
             base.OnEnabled();
         }
 
