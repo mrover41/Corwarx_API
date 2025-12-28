@@ -9,7 +9,7 @@ namespace Corwarx_Administration {
         public Loader() => Instance = this;
         public override void OnEnabled() {
             Plugin.OnLoadPlugin(new Corwarx_Project.Events.Args.Plugin.LoadPluginEventArgs("Corwarx_Admin"));
-
+            
             ModuleManager.RegisterModules(System.Reflection.Assembly.GetExecutingAssembly());
 
             base.OnEnabled();

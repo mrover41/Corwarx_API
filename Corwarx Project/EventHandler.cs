@@ -1,11 +1,11 @@
-﻿using Corwarx_Project.Extensions;
+﻿using Corwarx_Project.Events.Args.Administration;
+using Corwarx_Project.Events.Args.Modules;
+using Corwarx_Project.Events.Args.Plugin;
+using Corwarx_Project.Events.Args.Roles;
+using Corwarx_Project.Events.Handles;
+using Corwarx_Project.Extensions;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
-using Corwarx_Project.Events.Args.Roles;
-using Corwarx_Project.Events.Args.Plugin;
-using Corwarx_Project.Events.Args.Modules;
-using Corwarx_Project.Events.Args.Administration;
-using Corwarx_Project.Events.Handles;
 
 namespace Corwarx_Project {
     internal class EventHandler {

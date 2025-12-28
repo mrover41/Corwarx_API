@@ -45,6 +45,8 @@ public class Component_Tester : CustomWeapon {
                 cc += $"{component.GetType().Name}\n";
             }
 
+            Log.Info(raycastHit.transform.gameObject);
+            Log.Info("++++++++++++++++++++++++++++++");
             Log.Info(cp);
             Log.Info("===============================");
             Log.Info(cc);

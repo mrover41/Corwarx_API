@@ -8,6 +8,9 @@ namespace Corwarx_Project.Events.Handles {
         public static event Action<EnabledModuleEventArg> EnabledModuleEvent;
         public static event Action<DisableModuleEventArg> DisableModuleEvent;
         public static event Action<UnregisterModuleEventArg> UnregisterModuleEvent;
+        public static event Action RegisterAssembly;
+
+        public static void OnRegisterAssembly() => RegisterAssembly?.Invoke();
 
         public static RegModuleEventArg OnRegModuleEvent(RegModuleEventArg arg) {
             RegModuleEvent?.Invoke(arg);

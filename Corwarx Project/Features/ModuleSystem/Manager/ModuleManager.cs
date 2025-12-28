@@ -28,34 +28,47 @@ namespace Corwarx_Project.Features.ModuleSystem.Manager {
             }
         }
 
-        public static void RegisterModules(params Assembly[] assemblies) {
-            foreach (Assembly asm in assemblies) {
-                foreach (Type type in asm.GetTypes()) {
-                    if (type.GetCustomAttribute<LoadModuleAttribute>() != null) {
-                        if (!typeof(ModuleBase).IsAssignableFrom(type))
-                            throw new Exception($"Error in class: {type.FullName}\n Can`t load module");
-                        ModuleBase instance = (ModuleBase)Activator.CreateInstance(type);
-                        RegisterModule(instance, false);
-                    }
+        public static void RegisterModules(Assembly asm, bool enable_modules = true) {
+            foreach (Type type in asm.GetTypes()) {
+                if (type.GetCustomAttribute<LoadModuleAttribute>() != null) {
+                    if (!typeof(ModuleBase).IsAssignableFrom(type))
+                        throw new Exception($"Error in class: {type.FullName}\n Can`t load module");
+                    ModuleBase instance = (ModuleBase)Activator.CreateInstance(type);
+                    RegisterModule(instance, false);
+                    if (enable_modules)
+                        instance.OnEnable();
                 }
             }
+
+            Events.Handles.Module.OnRegisterAssembly();
         }
 
         internal static void EnableAllModules() {
             foreach (ModuleBase module in Modules) {
+                if (module.IsEnabled)
+                    continue;
+
                 if (!Corwarx_Project.Events.Handles.Module.OnEnableModuleEvent(new Events.Args.Modules.EnableModuleEventArg(module)).IsAllowed)
                     continue;
+
                 module.OnEnable();
+                module.IsEnabled = true;
+
                 Corwarx_Project.Events.Handles.Module.OnEnabledModuleEventArg(new Events.Args.Modules.EnabledModuleEventArg(module));
             }
         }
 
         public static void EnableModule(uint id) {
             ModuleBase module = Modules.FirstOrDefault(m => m.Id == id);
+
+            if (module.IsEnabled)
+                return;
+
             if (module != null) {
                 if (!Corwarx_Project.Events.Handles.Module.OnEnableModuleEvent(new Events.Args.Modules.EnableModuleEventArg(module)).IsAllowed)
                     return;
                 module.OnEnable();
+                module.IsEnabled = true;
                 Corwarx_Project.Events.Handles.Module.OnEnabledModuleEventArg(new Events.Args.Modules.EnabledModuleEventArg(module));
             } else {
                 Log.Error($"Module with ID {id} not found.");
@@ -64,8 +77,13 @@ namespace Corwarx_Project.Features.ModuleSystem.Manager {
 
         public static void DisableModule(uint id) {
             ModuleBase module = Modules.FirstOrDefault(m => m.Id == id);
+
+            if (!module.IsEnabled)
+                return;
+
             if (module != null) {
                 module.OnDisable();
+                module.IsEnabled = false;
                 Corwarx_Project.Events.Handles.Module.OnDisableModuleEventArg(new Events.Args.Modules.DisableModuleEventArg(module));
             } else {
                 Log.Error($"Module with ID {id} not found.");
@@ -74,7 +92,11 @@ namespace Corwarx_Project.Features.ModuleSystem.Manager {
 
         internal static void DisableAllModules() {
             foreach (ModuleBase module in Modules) {
+                if (!module.IsEnabled)
+                    return;
+
                 module.OnDisable();
+                module.IsEnabled = false;
                 Corwarx_Project.Events.Handles.Module.OnDisableModuleEventArg(new Events.Args.Modules.DisableModuleEventArg(module));
             }
         }

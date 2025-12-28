@@ -4,23 +4,20 @@ using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
-using System.Linq;
 using UnityEngine;
 
 namespace Corwarx_Gameplay.Modules.Lobby {
     [LoadModule]
     internal class LobbyModule : ModuleBase {
-        public override string Name => "Lobby";
-
         public override void OnEnable() {
-            //Exiled.Events.Handlers.Server.RoundStarted += OnRoundStarted;
+            Log.Info("Module");
+
             Exiled.Events.Handlers.Server.WaitingForPlayers += OnWaitingForPlayers;
             Exiled.Events.Handlers.Player.Verified += OnVerified;
             base.OnEnable();
         }
-
+        
         public override void OnDisable() {
-            //Exiled.Events.Handlers.Server.RoundStarted -= OnRoundStarted;
             Exiled.Events.Handlers.Server.WaitingForPlayers -= OnWaitingForPlayers;
             Exiled.Events.Handlers.Player.Verified -= OnVerified;
             base.OnDisable();
@@ -31,10 +28,10 @@ namespace Corwarx_Gameplay.Modules.Lobby {
         }
 
         private void OnVerified(VerifiedEventArgs ev) {
-            if (!Round.IsLobby) return;
+            if (!Round.IsLobby) 
+                return;
             ev.Player.Role.Set(RoleTypeId.Tutorial);
-            ev.Player.Position = Room.List.First(x => x.Type == RoomType.EzIntercom).Position + 
-                new Vector3(Loader.Instance.Config.x, Loader.Instance.Config.y, Loader.Instance.Config.z);
+            ev.Player.Teleport(RoomType.EzIntercom);
         }
 
         private void OnRoundStarted() {

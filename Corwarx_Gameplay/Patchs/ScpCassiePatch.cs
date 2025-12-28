@@ -1,8 +1,4 @@
-﻿using Exiled.API.Features;
-using Exiled.API.Features.DamageHandlers;
-using HarmonyLib;
-
-namespace Corwarx_Project.Patchs {
+﻿/*namespace Corwarx_Project.Patchs {
     [HarmonyPatch(typeof(NineTailedFoxAnnouncer), nameof(NineTailedFoxAnnouncer.AnnounceScpTermination))]
     internal class ScpCassiePatch {
         private static bool Prefix(ReferenceHub scp, DamageHandlerBase hit) {
@@ -13,4 +9,4 @@ namespace Corwarx_Project.Patchs {
             return true;
         }
     }
-}
+}*/
