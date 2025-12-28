@@ -1,4 +1,4 @@
-﻿using Corwarx_Project.Core;
+﻿/*using Corwarx_Project.Core;
 using Corwarx_Project.Core.Features.ModuleSystem.Atributies;
 using Corwarx_Project.Events.Args.Modules;
 using Corwarx_Project.Features.ModuleSystem.BaseClass;
@@ -28,3 +28,4 @@ namespace Corwarx_Project.Modules {
         }
     }
 }
+*/
